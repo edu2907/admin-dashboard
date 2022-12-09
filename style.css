@@ -56,7 +56,7 @@ header {
   grid-area: header;
 }
 
-main {
+.cards-container {
   grid-area: main;
   display: grid;
   grid-template-columns: 3fr 1fr;
