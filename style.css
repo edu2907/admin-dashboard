@@ -1,3 +1,12 @@
+* {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
 .layout-container {
   height: 100vh;
   width: 100vw;
@@ -10,7 +19,6 @@
 }
 
 .sidebar {
-  font-family: Roboto, Arial, sans-serif;
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
@@ -32,11 +40,6 @@
 
 .sidebar div:first-child img {
   height: 30px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0px;
 }
 
 .sidebar li {
@@ -61,16 +64,55 @@ main {
   grid-template-areas:
     "projects announcements"
     "projects trending";
+  column-gap: 15px;
+  row-gap: 30px;
+  padding-left: 30px
 }
 
-main .projects {
+.list-container ul {
+  display: grid;
+}
+
+.list-container > h1 {
+  font-size: 1.3em;
+}
+
+.projects {
   grid-area: projects;
 }
 
-main .announcements {
+.projects ul {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  height: 100%;
+}
+
+.announcements {
   grid-area: announcements;
 }
 
-main .trending {
+.announcements ul {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 20px;
+}
+
+.announcements ul h1 {
+  font-size: 1em;
+}
+
+.announcements p {
+  font-size: 0.7em;
+}
+
+.trending {
   grid-area: trending;
+}
+
+.trending ul {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px ;
 }
