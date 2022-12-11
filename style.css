@@ -40,7 +40,7 @@ body {
   flex-direction: column;
   gap: 40px;
   padding-left: 40px;
-  padding-top: var(--top-page-padding)
+  padding-top: var(--top-page-padding);
 }
 
 .sidebar div:first-child, .sidebar li {
@@ -83,6 +83,10 @@ header {
 
 header img {
   height: 30px;
+}
+
+header img[alt^="profile"] {
+  border-radius: 30px;
 }
 
 .search-bar-container, .user-notifications {
