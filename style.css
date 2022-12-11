@@ -5,7 +5,10 @@
 }
 
 :root {
-  --top-page-padding: 30px
+  --top-page-padding: 30px;
+  --main-color: #38A883;
+  --cards-color: rgb(218, 218, 218);
+  --header-color: #fff;
 }
 
 ul {
@@ -25,7 +28,7 @@ body {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns:300px 1fr;
   grid-template-rows: 1fr 4fr;
   grid-template-areas:
     "sidebar header"
@@ -41,6 +44,8 @@ body {
   gap: 40px;
   padding-left: 40px;
   padding-top: var(--top-page-padding);
+  background-color: var(--main-color);
+  color: white;
 }
 
 .sidebar div:first-child, .sidebar li {
@@ -72,13 +77,17 @@ body {
 
 header {
   grid-area: header;
-  padding-top: var(--top-page-padding);
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   column-gap: 30px;
   align-items: baseline;
+  padding-top: var(--top-page-padding);
   padding-right: 60px;
+  padding-left: 45px;
+  padding-bottom: 15px;
+  background-color: var(--header-color);
+  box-shadow: 0px 2.5px 2px rgba(0, 0, 0, 0.164);
 }
 
 header img {
@@ -105,6 +114,7 @@ header img[alt^="profile"] {
   border: none;
   background-color: rgb(236, 236, 236);
   padding: 0px 10px;
+
 }
 
 .user-notifications {
@@ -157,6 +167,9 @@ header img[alt^="profile"] {
   border-radius: 15px;
   height: 30px;
   flex-grow: 1;
+  background-color: var(--main-color);
+  color: #fff;
+
 }
 
 /* Cards */
@@ -171,7 +184,7 @@ header img[alt^="profile"] {
     "projects trending";
   column-gap: 15px;
   row-gap: 30px;
-
+  background-color: var(--cards-color);
   padding: 50px 40px 60px 30px;
 }
 
