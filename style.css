@@ -7,8 +7,8 @@
 :root {
   --top-page-padding: 30px;
   --main-color: #38A883;
-  --cards-color: rgb(218, 218, 218);
-  --header-color: #fff;
+  --background: rgb(218, 218, 218);
+  --foreground: #fff;
 }
 
 ul {
@@ -73,7 +73,7 @@ body {
   height: 18px;
 }
 
-/* Header */
+/* Header: Global */
 
 header {
   grid-area: header;
@@ -86,7 +86,7 @@ header {
   padding-right: 60px;
   padding-left: 45px;
   padding-bottom: 15px;
-  background-color: var(--header-color);
+  background-color: var(--foreground);
   box-shadow: 0px 2.5px 2px rgba(0, 0, 0, 0.164);
 }
 
@@ -102,6 +102,12 @@ header img[alt^="profile"] {
   align-self: flex-start;
 }
 
+.hello-user, .buttons {
+  align-self: center;
+}
+
+/* Header: Search Bar */
+
 .search-bar-container {
   display: flex;
   gap: 15px;
@@ -114,8 +120,9 @@ header img[alt^="profile"] {
   border: none;
   background-color: rgb(236, 236, 236);
   padding: 0px 10px;
-
 }
+
+/* Header: User Notifications */
 
 .user-notifications {
   display: flex;
@@ -133,9 +140,7 @@ header img[alt^="profile"] {
   font-size: 1em;
 }
 
-.hello-user, .buttons {
-  align-self: center;
-}
+/* Header: Hello User */
 
 .hello-user {
   display: flex;
@@ -155,6 +160,8 @@ header img[alt^="profile"] {
   font-size: 1.5em;
 }
 
+/* Header: Buttons */
+
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -172,7 +179,7 @@ header img[alt^="profile"] {
 
 }
 
-/* Cards */
+/* Cards: Global */
 
 .cards-container {
   grid-area: cards;
@@ -184,7 +191,7 @@ header img[alt^="profile"] {
     "projects trending";
   column-gap: 15px;
   row-gap: 30px;
-  background-color: var(--cards-color);
+  background-color: var(--background);
   padding: 50px 40px 60px 30px;
 }
 
@@ -202,8 +209,14 @@ header img[alt^="profile"] {
   font-size: 1.3em;
 }
 
+/* Cards: Projects */
+
 .projects {
   grid-area: projects;
+}
+
+.projects h2 {
+  margin-bottom: 12px;
 }
 
 .projects ul {
@@ -211,6 +224,36 @@ header img[alt^="profile"] {
   grid-template-rows: repeat(3, 1fr);
   gap: 15px; 
 }
+
+.card {
+  background-color: var(--foreground);
+  border-left: 8px solid #C93D1A;
+  padding: 20px 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card div:first-child {
+  width: 80%;
+}
+
+.card div:first-child h3 {
+  margin-bottom: 10px;
+}
+
+.card div:last-child{
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.card img {
+  height: 25px;
+}
+
+/* Cards: Announcements */
 
 .announcements {
   grid-area: announcements;
@@ -229,6 +272,8 @@ header img[alt^="profile"] {
 .announcements p {
   font-size: 0.7em;
 }
+
+/* Cards: Trending */
 
 .trending {
   grid-area: trending;
