@@ -29,7 +29,8 @@ body {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns:300px 1fr;
+  position: relative;
+  grid-template-columns: 340px 1fr;
   grid-template-rows: 1fr 4fr;
   grid-template-areas:
     "sidebar header"
@@ -42,10 +43,15 @@ img[alt^="profile"] {
 
 /* Sidebar */
 
+
+
 .sidebar {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  width: 300px;
   gap: 40px;
   padding-left: 40px;
   padding-top: var(--top-page-padding);
@@ -186,12 +192,11 @@ header img {
   grid-area: cards;
   display: grid;  
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
   grid-template-areas:
-    "projects announcements"
-    "projects trending";
-  column-gap: 15px;
-  row-gap: 30px;
+    "projects aside"
+    "projects .";
+  column-gap: 20px;
   background-color: var(--background);
   padding: 50px 40px 60px 30px;
 }
@@ -220,6 +225,13 @@ header img {
   box-shadow: 2.5px 2.5px 2px rgba(0, 0, 0, 0.164);
 }
 
+aside {
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  gap: 30px
+}
+
 /* Cards: Projects */
 
 .projects {
@@ -228,8 +240,8 @@ header img {
 
 .projects ul {
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 15px; 
+  grid-template-rows: repeat(3, 250px);
+  gap: 30px 20px; 
 }
 
 .project-card {
@@ -237,6 +249,7 @@ header img {
   padding: 20px 15px;
   display: flex;
   flex-direction: column;
+  gap: 15px;
   justify-content: space-between;
 }
 
@@ -246,6 +259,10 @@ header img {
 
 .project-card div:first-child h3 {
   margin-bottom: 10px;
+}
+
+.project-card div:first-child p {
+  color: var(--light-text);
 }
 
 .project-card div:last-child{
@@ -260,14 +277,8 @@ header img {
 
 /* Cards: Announcements */
 
-.announcements {
-  grid-area: announcements;
-}
-
 .announcements .card {
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
 }
 
@@ -281,20 +292,16 @@ header img {
 }
 
 .announcements hr {
-  margin: 12px 0px;
+  margin: 18px 0px;
 }
 
 /* Cards: Trending */
 
-.trending {
-  grid-area: trending;
-}
-
 .trending .card {
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
-  gap: 10px;
-  padding: 10px ;
+  gap: 20px;
+  padding: 20px;
 }
 
 .trending li {
