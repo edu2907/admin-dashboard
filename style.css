@@ -43,8 +43,6 @@ img[alt^="profile"] {
 
 /* Sidebar */
 
-
-
 .sidebar {
   grid-area: sidebar;
   display: flex;
