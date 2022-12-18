@@ -41,6 +41,10 @@ img[alt^="profile"] {
   border-radius: 30px;
 }
 
+.clickable:hover {
+  cursor: pointer;
+}
+
 /* Sidebar */
 
 .sidebar {
@@ -76,6 +80,10 @@ img[alt^="profile"] {
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: bold;
+}
+
+.sidebar li:hover {
+  text-decoration: underline 2px;
 }
 
 .sidebar li img {
@@ -125,6 +133,14 @@ header img {
   border: none;
   background-color: rgb(236, 236, 236);
   padding: 0px 10px;
+}
+
+.search-bar-container #search-bar:focus {
+  outline: 2px solid rgb(0, 150, 209);
+}
+
+.search-bar-container input:hover {
+  outline: 2px solid black;
 }
 
 /* Header: User Notifications */
@@ -181,7 +197,10 @@ header img {
   flex-grow: 1;
   background-color: var(--main-color);
   color: #fff;
+}
 
+.buttons button:hover {
+  opacity: 0.75;
 }
 
 /* Cards: Global */
@@ -237,7 +256,7 @@ aside {
 }
 
 .projects ul {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-template-rows: repeat(3, 250px);
   gap: 30px 20px; 
 }
